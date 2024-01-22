@@ -10,7 +10,7 @@ api_type = st.secrets.api_type
 api_version = st.secrets.api_version
 
 
-st.title("🪒 Edgewell AI")
+st.title("<3 My AI")
 
 # Initialize the chat messages history
 client = AzureOpenAI(

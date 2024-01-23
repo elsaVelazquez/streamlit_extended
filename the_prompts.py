@@ -1,7 +1,7 @@
 import streamlit as st
 
-SCHEMA_PATH = st.secrets.get("SCHEMA_PATH", "SANDBOX.BI_TEAM")
-QUALIFIED_TABLE_NAME = f"{SCHEMA_PATH}.SALES_MATERIAL_NO_COUNTRY_BY_MONTH_TIME_SERIES"
+SCHEMA_PATH = st.secrets.get("SCHEMA_PATH", "FROSTY_SAMPLE.CHATBOT")
+QUALIFIED_TABLE_NAME = f"{SCHEMA_PATH}.SYNTHETIC_SALES_DATA"
 TABLE_DESCRIPTION = """
 One table has various metrics for financial entities (also referred to as banks) since 2020.
 The user may describe the entities interchangeably as banks, financial institutions, or financial entities.
@@ -15,7 +15,7 @@ The user may describe the ratings as traffic.
 
 
 METADATA_QUERY = (
-    f"SELECT VARIABLE_NAME, DEFINITION FROM {SCHEMA_PATH}.SALES_MATERIAL_NO_COUNTRY_BY_MONTH_TIME_SERIES;"
+    f"SELECT VARIABLE_NAME, DEFINITION FROM {SCHEMA_PATH}.SYNTHETIC_SALES_DATA";
 )
 
 GEN_SQL = """
@@ -123,7 +123,7 @@ def get_table_context(table_names: list, metadata_query: str = None):
 
 
 def get_system_prompt():
-    table_names = ['SANDBOX.BI_TEAM.SALES_MATERIAL_NO_COUNTRY_BY_MONTH_TIME_SERIES', 'SANDBOX.BI_TEAM.ATLAS_TRAFFIC_PRODUCTS_AND_KEYWORDS_BY_MONTH_TIME_SERIES']
+    table_names = ['FROSTY_SAMPLE.CHATBOT.SYNTHETIC_SALES_DATA"', 'FROSTY_SAMPLE.CHATBOT.SYNTHETIC_SALES_DATA']
     table_contexts = get_table_context(
         table_names=table_names,
         metadata_query=METADATA_QUERY

@@ -11,14 +11,26 @@ CREATE TABLE Synthetic_Sales_Data AS (
 );  
 
 
-CREATE TABLE Synthetic_Retail_Data AS (  
-    SELECT *  
+CREATE OR REPLACE TABLE Synthetic_Retail_Data AS  
+    SELECT 
+        column1 AS "Retailer ID", 
+        column2 AS "Retailer Name", 
+        column3 AS "Retailer SKU", 
+        column4 AS "UPC", 
+        column5 AS "Model Number", 
+        column6 AS "Title", 
+        column7 AS "Brand", 
+        column8 AS "Category", 
+        column9 AS "Subcategory", 
+        column10 AS "Week ID", 
+        column11 AS "Month", 
+        column12 AS "Year", 
+        column13 AS "Variable_Name", 
+        column14 AS "Definition", 
+        column15 AS "Value"
     FROM (  
-        VALUES  
+        SELECT * FROM VALUES  
             (1, 'Megastore.com', 'A1ALS6K1KP', '', '', 'Waterless Dog Shampoo, Volumizing Dog Shampoo for All Hair Types', 'SHIFAKOU', 'Hair Care', 'Dog Shampoo', 202319, 5, 2023, 'Organic Traffic', 'Organic traffic represents the visitors...', 100),  
-            (2, 'Megastore.com', 'A1ALS6K1KP', '', '', 'Waterless Dog Shampoo, Volumizing Dog Shampoo for All Hair Types', 'SHIFAKOU', 'Hair Care', 'Dog Shampoo', 202320, 5, 2023, 'Paid Traffic', 'Paid traffic represents the visitors...', 200),  
-            (3, 'Megastore.com', 'A1ALS6KL7R', '', '', '360 Burgundy Lace Front Wigs Human Hair for Black Women', 'Boffo', 'Hair Care', 'Hair Wigs, Extensions & Accessories', 202246, 11, 2022, 'Paid Traffic', 'Paid traffic represents the visitors...', 300),  
-            (4, 'Megastore.com', 'A1ALS6KL7R', '', '', '360 Burgundy Lace Front Wigs Human Hair for Black Women', 'Boffo', 'Hair Care', 'Hair Wigs, Extensions & Accessories', 202247, 11, 2022, 'Organic Traffic', 'Organic traffic represents the visitors...', 400),  
-            (5, 'Megastore.com', 'A1ALS6N6K1', '', '23BP09BK3P', 'Reusable Self-Adhesive Eyelashes', 'Maexus', 'Beauty Brushes, Accessories & Tools', 'False Eyelashes & Adhesives', 202303, 1, 2023, 'Organic Traffic', 'Organic traffic represents the visitors...', 500)  
-    ) AS t("Retailer ID", "Retailer Name", "Retailer SKU", "UPC", "Model Number", "Title", "Brand", "Category", "Subcategory", "Week ID", "Month", "Year", "Variable_Name", "Definition", "Value")  
-);  
+            (2, 'Megastore.com', 'A1ALS6K1KP', '', '', 'Waterless Dog Shampoo, Volumizing Dog Shampoo for All Hair Types', 'SHIFAKOU', 'Hair Care', 'Dog Shampoo', 202320, 5, 2023, 'Paid Traffic', 'Paid traffic represents the visitors...', 200)
+            -- Add more rows as needed for your synthetic data
+    ) AS t(column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, column11, column12, column13, column14, column15);
